@@ -13,14 +13,21 @@ public class Main {
         int randNumToFind = myNumList[randIndex];
 
         //linear search
-
+        long start1 = System.nanoTime();
+        int location = linearSearch(myNumList, randNumToFind);
+        long end1 = System.nanoTime();
+        System.out.println();
+        System.out.println("Location: "+location);
+        System.out.println("Elapsed time in nano: " + (end1 - start1));
 
         //binary search
-
-        long start1 = System.currentTimeMillis();
-        long end1 = System.currentTimeMillis();
+        long start2 = System.nanoTime();
+        int location2 = binarySearch(myNumList, randNumToFind,0,myNumList.length-1);
+        long end2 = System.nanoTime();
         System.out.println();
-        System.out.println("Elapsed time in ms: " + (end1 - start1));
+        System.out.println("Location: "+location);
+        System.out.println("Elapsed time in nano: " + (end2 - start2));
+
     }
 
     public static int linearSearch(int[] array, int target){
