@@ -36,14 +36,17 @@ public class Main {
                 return i;
             }
         }
-        return Integer.MAX_VALUE;
+        return -1;
     }
 
     //recursive binary search
     public static int binarySearch(int[] array, int target, int start, int end){
         int mid = (start+end)/2;
-        if(target==array[mid]){
+        if(target==array[mid]){ //base case if target exists in list
             return mid;
+        }
+        if(start==end){ //base case if target not in list
+            return -1;
         }
         if(target<array[mid]){
             return binarySearch(array,target,start,mid-1);
@@ -51,6 +54,6 @@ public class Main {
         if(target>array[mid]){
             return binarySearch(array, target, mid+1, end);
         }
-        return Integer.MAX_VALUE;
+        return -1;
         }
     }
